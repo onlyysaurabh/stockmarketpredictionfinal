@@ -34,9 +34,9 @@ This project employs four distinct machine learning algorithms for predicting st
 
 **Mathematical Formulation:**
 
-$$
+```math
 (1 - \sum_{i=1}^p \phi_i B^i) (1-B)^d y_t = (1 + \sum_{j=1}^q \theta_j B^j) \epsilon_t
-$$
+```
 
 Where:
 - $y_t$ is the time series at time $t$.
@@ -92,14 +92,14 @@ SARIMAX extends this by adding seasonal components and exogenous regressors.
 **Mathematical Formulation (LSTM Cell):**
 
 $$
-\begin{align*}
+\begin{aligned}
 f_t &= \sigma(W_f [h_{t-1}, x_t] + b_f) \\
 i_t &= \sigma(W_i [h_{t-1}, x_t] + b_i) \\
 \tilde{C}_t &= \tanh(W_C [h_{t-1}, x_t] + b_C) \\
 C_t &= f_t * C_{t-1} + i_t * \tilde{C}_t \\
 o_t &= \sigma(W_o [h_{t-1}, x_t] + b_o) \\
 h_t &= o_t * \tanh(C_t)
-\end{align*}
+\end{aligned}
 $$
 
 Where $\sigma$ is the sigmoid function, $W$ are weights, $b$ are biases, $h_{t-1}$ is the previous hidden state, $x_t$ is the current input, $C_{t-1}$ is the previous cell state.
@@ -150,9 +150,11 @@ $$
 Subject to:
 
 $$
-y_i - f(x_i) \le \epsilon + \zeta_i \\
-f(x_i) - y_i \le \epsilon + \zeta_i^* \\
-\zeta_i, \zeta_i^* \ge 0
+\begin{aligned}
+y_i - f(x_i) &\leq \epsilon + \zeta_i \\
+f(x_i) - y_i &\leq \epsilon + \zeta_i^* \\
+\zeta_i, \zeta_i^* &\geq 0
+\end{aligned}
 $$
 
 Where $w$ is the weight vector, $b$ is the bias, $\phi(x)$ is the mapped feature vector, $\epsilon$ is the margin, $C$ is the regularization parameter.
