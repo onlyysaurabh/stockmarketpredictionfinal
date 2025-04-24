@@ -34,9 +34,9 @@ This project employs four distinct machine learning algorithms for predicting st
 
 **Mathematical Formulation:**
 
-```math
+$$
 (1 - \sum_{i=1}^p \phi_i B^i) (1-B)^d y_t = (1 + \sum_{j=1}^q \theta_j B^j) \epsilon_t
-```
+$$
 
 Where:
 - $y_t$ is the time series at time $t$.
@@ -202,8 +202,6 @@ Where $w$ is the weight vector, $b$ is the bias, $\phi(x)$ is the mapped feature
 $$
 \hat{y}_i = \sum_{k=1}^K f_k(x_i)
 $$
-
-Where $f_k$ is the prediction of the $k$-th tree.
 
 Regularized objective function:
 
