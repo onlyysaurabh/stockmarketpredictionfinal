@@ -1,0 +1,22 @@
+{
+  "max_workers": 6,
+  "start_date": "2020-01-01",
+  "end_date": "2023-12-31",
+  "jobs": [
+    {
+      "model": "xgboost",
+      "symbols": ["AAPL", "MSFT", "GOOGL"],
+      "extra_args": ["--n-estimators", "300"]
+    },
+    {
+      "model": "lstm",
+      "symbols_file": "finance_stocks.txt",
+      "extra_args": ["--epochs", "100"]
+    },
+    {
+      "model": "arima",
+      "symbol": "TSLA",
+      "start_date": "2019-01-01"
+    }
+  ]
+}
